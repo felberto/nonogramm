@@ -15,6 +15,8 @@ public class HomeController {
 
     public Main main;
     @FXML
+    private Button btnTutorial;
+    @FXML
     private VBox vbox_home;
     @FXML
     private Button btnRestart;
@@ -30,9 +32,9 @@ public class HomeController {
     // called on initialization
     public void initialize() {
         createBoard();
-        ObservableList<String> options = FXCollections.observableArrayList("10x10", "15x15");
+        ObservableList<String> options = FXCollections.observableArrayList("Level: 10x10", "Level: 15x15");
         choiceBoxLevel.setItems(options);
-        choiceBoxLevel.setValue("10x10");
+        choiceBoxLevel.setValue(options.get(0));
     }
 
     private void createBoard() {
