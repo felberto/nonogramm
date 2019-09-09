@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" minWidth="-Infinity" prefWidth="300.0"
+      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1">
+    <children>
+        <HBox alignment="BOTTOM_RIGHT">
+            <children>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1 &#10;1"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;2&#10;2&#10;1"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1&#10;1"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="8"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;2&#10;2"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1&#10;1&#10;1"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;4&#10;2"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="4"/>
+                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="1 1 2">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="97.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="1 1 1 1 1">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="110.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="1 1 1 1 1">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="123.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="1 1 2 1">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="136.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="1 5">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="148.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="1 4 1">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="161.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="10">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="174.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="6">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="189.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="1 1 1">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="215.0" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Label text="1 1">
+                    <padding>
+                        <Insets right="3.0"/>
+                    </padding>
+                </Label>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+                <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>
