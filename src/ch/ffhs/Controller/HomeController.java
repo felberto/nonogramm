@@ -3,6 +3,7 @@ package ch.ffhs.Controller;
 import ch.ffhs.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -14,6 +15,8 @@ import java.io.IOException;
 public class HomeController {
 
     public Main main;
+    @FXML
+    private VBox vbox_main;
     @FXML
     private Button btnTutorial;
     @FXML
@@ -45,5 +48,11 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void clickTutorial(final ActionEvent event) throws IOException {
+        this.vbox_main.getChildren().clear();
+        this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/tutorial.fxml")));
     }
 }
