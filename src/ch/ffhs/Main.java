@@ -16,6 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
+        primaryStage.setTitle("Nonogramme lösen");
         mainView();
     }
 

@@ -1,41 +1,49 @@
 package ch.ffhs.Controller;
 
 import ch.ffhs.Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+
+import java.io.IOException;
 
 public class HomeController {
 
     public Main main;
     @FXML
-    private Pane pane;
+    private Button btnTutorial;
+    @FXML
+    private VBox vbox_home;
     @FXML
     private Button btnRestart;
     @FXML
-    private ChoiceBox<?> dropdownLevel;
+    private ChoiceBox<String> choiceBoxLevel;
     @FXML
     private Button btnSolution;
 
     public void setMain(Main main) {
         this.main = main;
-        createBoard();
     }
 
-    public void createBoard() {
-        Button btn1 = new Button();
-        btn1.setStyle("-fx-border-color: rgb(122,122,122); -fx-border-width: 1px;");
-        btn1.setPrefHeight(10.0);
-        btn1.setPrefWidth(10.0);
-        Button btn2 = new Button();
-        btn2.setStyle("-fx-border-color: rgb(122,122,122); -fx-border-width: 1px;");
-        btn2.maxWidth(4.0);
-        btn2.maxHeight(4.0);
+    // called on initialization
+    public void initialize() {
+        createBoard();
+        ObservableList<String> options = FXCollections.observableArrayList("Level: 10x10", "Level: 15x15");
+        choiceBoxLevel.setItems(options);
+        choiceBoxLevel.setValue(options.get(0));
+    }
 
-        HBox hbox = new HBox(btn1, btn2);
-        pane.getChildren().add(hbox);
-        System.out.println(btn1.getWidth() + ", " + btn1.getHeight());
+    private void createBoard() {
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("Views/board_10x10.fxml"));
+            VBox vbox = loader.load();
+            this.vbox_home.getChildren().addAll(vbox.getChildren());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
