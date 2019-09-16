@@ -1,6 +1,6 @@
 package ch.ffhs;
 
-import ch.ffhs.Controller.HomeController;
+import ch.ffhs.Controller.StartController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,14 +26,14 @@ public class Main extends Application {
 
     public void mainView() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("Views/home.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("Views/start.fxml"));
             AnchorPane pane = loader.load();
 
             primaryStage.setMinHeight(600.00);
             primaryStage.setMinWidth(600.00);
 
-            HomeController homeController = loader.getController();
-            homeController.setMain(this);
+            StartController startController = loader.getController();
+            startController.setMain(this);
 
             Scene scene = new Scene(pane);
 
