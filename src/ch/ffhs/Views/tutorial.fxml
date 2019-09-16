@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.ffhs.Controller.TutorialController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="ch.ffhs.Controller.TutorialController">
     <children>
         <VBox fx:id="vbox_main" alignment="CENTER" layoutY="416.0" spacing="20.0" style="-fx-background-color: #c5e5ed;"
               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
@@ -21,9 +20,16 @@
                         <Font size="25.0"/>
                     </font>
                 </Label>
-                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="206.0" prefWidth="505.0"
-                       text="Die Zahlen vor den Zeilen und über den Spalten definieren die auszufüllenden Blöcke von Kästchen:&#10;&#10;- Jeder Zahlwert entspricht genau der Länge eines Blockes.&#10;- Bei mehreren Zahlen entspricht ihre Abfolge der Reihenfolge der Blöcke.&#10;- Zwischen zwei Blöcken muss sich mindestens ein leeres Feld befinden."
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="83.0" prefWidth="506.0"
+                       text="Die Zahlen vor den Zeilen und über den Spalten definieren die auszufüllenden Blöcke von Kästchen:"
                        textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="110.0" prefWidth="506.0"
+                       text="- Jeder Zahlwert entspricht genau der Länge eines Blockes.&#10;- Bei mehreren Zahlen entspricht ihre Abfolge der Reihenfolge der Blöcke.&#10;- Zwischen zwei Blöcken muss sich mindestens ein leeres Feld befinden."
+                       wrapText="true">
                     <font>
                         <Font size="15.0"/>
                     </font>
@@ -31,7 +37,7 @@
                 <HBox alignment="CENTER" spacing="135.0"/>
                 <HBox alignment="CENTER" spacing="140.0">
                     <children>
-                        <Button fx:id="btnBack" onAction="#clickBack" mnemonicParsing="false" text="Zurück"/>
+                        <Button fx:id="btnBack" mnemonicParsing="false" onAction="#clickBack" text="Zurück"/>
                     </children>
                 </HBox>
             </children>
