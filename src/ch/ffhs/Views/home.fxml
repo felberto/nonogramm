@@ -3,10 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="600.0"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="800.0"
             xmlns="http://javafx.com/javafx/11.0.1" fx:controller="ch.ffhs.Controller.HomeController">
     <children>
-        <VBox fx:id="vbox_main" alignment="CENTER" layoutY="416.0" spacing="20.0" style="-fx-background-color: #c5e5ed;"
+        <VBox fx:id="vbox_main" alignment="CENTER" layoutY="416.0" spacing="20.0"
+              style="-fx-background-color: linear-gradient(to bottom right, #645E9D, #98D0C8);"
               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
               AnchorPane.topAnchor="0.0">
             <children>
