@@ -15,13 +15,16 @@
             </image>
         </ImageView>
         <Button fx:id="btnPlay" onAction="#clickPlay" layoutX="48.0" layoutY="264.0" mnemonicParsing="false"
-                prefHeight="72.0" prefWidth="336.0" text="Spielen">
+                prefHeight="72.0" prefWidth="336.0" text="Spielen"
+                style="-fx-background-color: none; -fx-border-color: #645E9D; -fx-border-width: 5; -fx-font-size: 40; -fx-text-fill: #645E9D; -fx-spacing: 10">
             <font>
                 <Font name="Comic Sans MS" size="35.0"/>
             </font>
         </Button>
-        <Button fx:id="btnHighscore" layoutX="48.0" layoutY="365.0" mnemonicParsing="false" prefHeight="72.0"
-                prefWidth="336.0" text="Highscores">
+        <Button fx:id="btnHighscore" onAction="#clickHighscore" layoutX="48.0" layoutY="365.0" mnemonicParsing="false"
+                prefHeight="72.0"
+                prefWidth="336.0" text="Highscores"
+                style="-fx-background-color: none; -fx-border-color: #645E9D; -fx-border-width: 5; -fx-font-size: 40; -fx-text-fill: #645E9D">
             <font>
                 <Font name="Comic Sans MS" size="35.0"/>
             </font>
