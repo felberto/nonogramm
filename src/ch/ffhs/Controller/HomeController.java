@@ -55,4 +55,10 @@ public class HomeController {
         this.vbox_main.getChildren().clear();
         this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/tutorial.fxml")));
     }
+
+    @FXML
+    private void clickBack(final ActionEvent event) throws IOException {
+        this.vbox_main.getChildren().clear();
+        this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/start.fxml")));
+    }
 }

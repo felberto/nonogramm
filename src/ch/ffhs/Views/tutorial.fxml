@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="800.0"
@@ -11,11 +12,11 @@
               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
               AnchorPane.topAnchor="0.0">
             <children>
-                <Label alignment="CENTER" prefHeight="56.0" prefWidth="300.0" text="Nonogramme">
+                <!--<Label alignment="CENTER" prefHeight="56.0" prefWidth="300.0" text="Nonogramme">
                     <font>
                         <Font name="System Bold" size="39.0"/>
                     </font>
-                </Label>
+                </Label>-->
                 <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="300.0" text="Tutorial">
                     <font>
                         <Font size="25.0"/>
@@ -38,7 +39,9 @@
                 <HBox alignment="CENTER" spacing="135.0"/>
                 <HBox alignment="CENTER" spacing="140.0">
                     <children>
-                        <Button fx:id="btnBack" mnemonicParsing="false" onAction="#clickBack" text="Zurück"/>
+                        <Button fx:id="btnBack" mnemonicParsing="false" onAction="#clickBack" text="Zurück"
+                                style="-fx-background-color: none; -fx-border-color: #645E9D; -fx-border-width: 2; -fx-font-size: 20; -fx-text-fill: #645E9D;"/>
+
                     </children>
                 </HBox>
             </children>
