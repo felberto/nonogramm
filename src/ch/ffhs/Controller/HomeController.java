@@ -61,4 +61,10 @@ public class HomeController {
         this.vbox_main.getChildren().clear();
         this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/start.fxml")));
     }
+
+    @FXML
+    private void clickSave(final ActionEvent event) throws IOException {
+        //Todo: save state
+
+    }
 }
