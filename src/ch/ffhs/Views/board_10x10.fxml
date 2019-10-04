@@ -10,21 +10,27 @@
     <children>
         <HBox alignment="BOTTOM_RIGHT">
             <children>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1 &#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;2&#10;2&#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1&#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="8"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;2&#10;2"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1&#10;1&#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;4&#10;2"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="4"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1"/>
+                <Label fx:id="label_col_0" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1 &#10;1"/>
+                <Label fx:id="label_col_1" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0"
+                       text="1&#10;2&#10;2&#10;1"/>
+                <Label fx:id="label_col_2" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0"
+                       text="1&#10;1&#10;1&#10;1"/>
+                <Label fx:id="label_col_3" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="8"/>
+                <Label fx:id="label_col_4" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0"
+                       text="1&#10;2&#10;2"/>
+                <Label fx:id="label_col_5" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0"
+                       text="1&#10;1&#10;1&#10;1&#10;1"/>
+                <Label fx:id="label_col_6" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0"
+                       text="1&#10;1&#10;1"/>
+                <Label fx:id="label_col_7" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0"
+                       text="1&#10;4&#10;2"/>
+                <Label fx:id="label_col_8" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="4"/>
+                <Label fx:id="label_col_9" alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1"/>
             </children>
         </HBox>
         <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="1 1 2">
+                <Label fx:id="label_row_0" text="1 1 2">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -93,7 +99,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="97.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="1 1 1 1 1">
+                <Label fx:id="label_row_1" text="1 1 1 1 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -162,7 +168,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="110.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="1 1 1 1 1">
+                <Label fx:id="label_row_2" text="1 1 1 1 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -231,7 +237,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="123.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="1 1 2 1">
+                <Label fx:id="label_row_3" text="1 1 2 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -300,7 +306,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="136.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="1 5">
+                <Label fx:id="label_row_4" text="1 5">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -369,7 +375,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="148.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="1 4 1">
+                <Label fx:id="label_row_5" text="1 4 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -438,7 +444,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="161.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="10">
+                <Label fx:id="label_row_6" text="10">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -507,7 +513,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="174.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="6">
+                <Label fx:id="label_row_7" text="6">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -576,7 +582,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="189.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="1 1 1">
+                <Label fx:id="label_row_8" text="1 1 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
@@ -645,7 +651,7 @@
         </HBox>
         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="215.0" prefHeight="20.0" prefWidth="200.0">
             <children>
-                <Label text="1 1">
+                <Label fx:id="label_row_9" text="1 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
