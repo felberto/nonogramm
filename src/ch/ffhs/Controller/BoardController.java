@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -103,29 +102,28 @@ public class BoardController {
         List<String> index = Arrays.asList(btn.getId().replace("btn_", "").split("_"));
         int row = Integer.parseInt(index.get(0));
         int column = Integer.parseInt(index.get(1));
-        setState(row, column);
+        setButtonLayout(row, column);
     }
 
-    private void setState(int row, int column) {
-        State state = board.setState(row, column);
+    private void setButtonLayout(int row, int column) {
+        State state = board.setNextState(row, column);
         Button btn = buttons[row][column];
 
         switch (state) {
             case UNDEFINED:
                 btn.setText("");
-                btn.setBackground(Background.EMPTY);
                 break;
             case MARKED:
                 btn.setStyle("-fx-background-color: #645E9D");
                 break;
             case SPACE:
-                btn.setStyle("-fx-background-color: none; -fx-border-color: #645E9D");
+                btn.setStyle("-fx-background-color: none");
                 btn.setText("X");
                 break;
         }
     }
 
-    private void loadSolution() {
+    public void loadSolution() {
         JSONArray solution = (JSONArray) actualBoard.get("solution");
         boolean[][] solutionArray = new boolean[solution.size()][solution.size()];
         for (int i = 0; i < solution.size(); i++) {
@@ -135,6 +133,17 @@ public class BoardController {
             }
         }
         setSolutionState(solutionArray);
+        board.resetBoard();
+    }
+
+    public void restart() {
+        board.resetBoard();
+        for (int i = 0; i < board.getSize(); i++) {
+            for (int j = 0; j < board.getSize(); j++) {
+                buttons[i][j].setStyle("-fx-background-color: none");
+                buttons[i][j].setText("");
+            }
+        }
     }
 
     private void setSolutionState(boolean[][] solutionArray) {
@@ -142,6 +151,9 @@ public class BoardController {
             for (int j = 0; j < solutionArray[i].length; j++) {
                 if (solutionArray[i][j]) {
                     buttons[i][j].setStyle("-fx-background-color: #645E9D");
+                } else {
+                    buttons[i][j].setText("");
+                    buttons[i][j].setStyle("-fx-background-color: none;");
                 }
             }
         }

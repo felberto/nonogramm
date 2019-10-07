@@ -18,15 +18,13 @@ public class HomeController {
     @FXML
     private VBox vbox_main;
     @FXML
-    private Button btnTutorial;
+    private Button btnTutorial, btnRestart, btnSolution;
     @FXML
     private VBox vbox_home;
     @FXML
-    private Button btnRestart;
-    @FXML
     private ChoiceBox<String> choiceBoxLevel;
-    @FXML
-    private Button btnSolution;
+
+    private BoardController boardController;
 
     public void setMain(Main main) {
         this.main = main;
@@ -45,6 +43,7 @@ public class HomeController {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("Views/board_10x10.fxml"));
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
+            boardController = loader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -60,5 +59,23 @@ public class HomeController {
     private void clickBack(final ActionEvent event) throws IOException {
         this.vbox_main.getChildren().clear();
         this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/start.fxml")));
+    }
+
+    @FXML
+    private void clickSolution(final ActionEvent event) {
+        if (boardController == null) {
+            return;
+        } else {
+            boardController.loadSolution();
+        }
+    }
+
+    @FXML
+    void clickRestart(final ActionEvent event) {
+        if (boardController == null) {
+            return;
+        } else {
+            boardController.restart();
+        }
     }
 }
