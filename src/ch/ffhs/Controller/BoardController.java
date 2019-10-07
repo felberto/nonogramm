@@ -21,6 +21,7 @@ public class BoardController {
 
     private Board board;
     private Button[][] buttons;
+    private JSONObject actualBoard;
 
     @FXML
     private Button btn_0_0, btn_0_1, btn_0_2, btn_0_3, btn_0_4, btn_0_5, btn_0_6, btn_0_7, btn_0_8, btn_0_9,
@@ -56,8 +57,8 @@ public class BoardController {
             JSONObject games = (JSONObject) jsonObject.get("games");
             JSONArray boards = (JSONArray) games.get("10x10");
             // load first board
-            JSONObject firstBoard = (JSONObject) boards.get(0);
-            setLabels(firstBoard);
+            actualBoard = (JSONObject) boards.get(0);
+            setLabels(actualBoard);
         } catch (IOException | ParseException ex) {
             System.out.println("Error loading file");
         }
@@ -115,12 +116,34 @@ public class BoardController {
                 btn.setBackground(Background.EMPTY);
                 break;
             case MARKED:
-                btn.setStyle("-fx-base: orange");
+                btn.setStyle("-fx-background-color: #645E9D");
                 break;
             case SPACE:
-                btn.setStyle("-fx-base: #eaeaea;");
+                btn.setStyle("-fx-background-color: none; -fx-border-color: #645E9D");
                 btn.setText("X");
                 break;
+        }
+    }
+
+    private void loadSolution() {
+        JSONArray solution = (JSONArray) actualBoard.get("solution");
+        boolean[][] solutionArray = new boolean[solution.size()][solution.size()];
+        for (int i = 0; i < solution.size(); i++) {
+            JSONArray row = (JSONArray) solution.get(i);
+            for (int j = 0; j < row.size(); j++) {
+                solutionArray[i][j] = (boolean) row.get(j);
+            }
+        }
+        setSolutionState(solutionArray);
+    }
+
+    private void setSolutionState(boolean[][] solutionArray) {
+        for (int i = 0; i < solutionArray.length; i++) {
+            for (int j = 0; j < solutionArray[i].length; j++) {
+                if (solutionArray[i][j]) {
+                    buttons[i][j].setStyle("-fx-background-color: #645E9D");
+                }
+            }
         }
     }
 }

@@ -1,0 +1,12 @@
+.labels {
+    -fx-text-fill: white;
+}
+
+.board-buttons {
+    -fx-background-color: none;
+    -fx-border-color: #645E9D;
+    -fx-border-radius: 0.25em;
+    -fx-pref-width: 25px;
+    -fx-pref-height: 25px;
+    -fx-font-size: 9px;
+}
