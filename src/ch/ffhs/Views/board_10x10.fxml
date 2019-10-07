@@ -3,712 +3,421 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" minWidth="-Infinity" prefWidth="300.0"
-      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1"
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="1.0" AnchorPane.leftAnchor="0.0"
+      AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1"
       fx:controller="ch.ffhs.Controller.BoardController">
     <children>
-        <HBox alignment="BOTTOM_RIGHT">
+        <HBox alignment="BOTTOM_RIGHT" spacing="1.0">
             <children>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1 &#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;2&#10;2&#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1&#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="8"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;2&#10;2"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1&#10;1&#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;1&#10;1"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1&#10;4&#10;2"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="4"/>
-                <Label alignment="CENTER" minWidth="-Infinity" prefWidth="20.0" text="1"/>
+                <Label fx:id="label_col_0" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="1 &#10;1"/>
+                <Label fx:id="label_col_1" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="1&#10;2&#10;2&#10;1"/>
+                <Label fx:id="label_col_2" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="1&#10;1&#10;1&#10;1"/>
+                <Label fx:id="label_col_3" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="8"/>
+                <Label fx:id="label_col_4" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="1&#10;2&#10;2"/>
+                <Label fx:id="label_col_5" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="1&#10;1&#10;1&#10;1&#10;1"/>
+                <Label fx:id="label_col_6" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="1&#10;1&#10;1"/>
+                <Label fx:id="label_col_7" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="1&#10;4&#10;2"/>
+                <Label fx:id="label_col_8" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="4"/>
+                <Label fx:id="label_col_9" alignment="CENTER" minWidth="-Infinity" prefWidth="25.0" styleClass="labels"
+                       text="1"/>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" spacing="1.0">
             <children>
-                <Label text="1 1 2">
+                <Label fx:id="label_row_0" styleClass="labels" text="1 1 2">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_0_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_0_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="97.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="97.0" spacing="1.0">
             <children>
-                <Label text="1 1 1 1 1">
+                <Label fx:id="label_row_1" styleClass="labels" text="1 1 1 1 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_1_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_1_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="110.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="110.0" spacing="1.0">
             <children>
-                <Label text="1 1 1 1 1">
+                <Label fx:id="label_row_2" styleClass="labels" text="1 1 1 1 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_2_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_2_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="123.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="123.0" spacing="1.0">
             <children>
-                <Label text="1 1 2 1">
+                <Label fx:id="label_row_3" styleClass="labels" text="1 1 2 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_3_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_3_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="136.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="136.0" spacing="1.0">
             <children>
-                <Label text="1 5">
+                <Label fx:id="label_row_4" styleClass="labels" text="1 5">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_4_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_4_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="148.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="148.0" spacing="1.0">
             <children>
-                <Label text="1 4 1">
+                <Label fx:id="label_row_5" styleClass="labels" text="1 4 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_5_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_5_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="161.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="161.0" spacing="1.0">
             <children>
-                <Label text="10">
+                <Label fx:id="label_row_6" styleClass="labels" text="10">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_6_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_6_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="174.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="174.0" spacing="1.0">
             <children>
-                <Label text="6">
+                <Label fx:id="label_row_7" styleClass="labels" text="6">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_7_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_7_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="189.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="189.0" spacing="1.0">
             <children>
-                <Label text="1 1 1">
+                <Label fx:id="label_row_8" styleClass="labels" text="1 1 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_8_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_8_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>
-        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="215.0" prefHeight="20.0" prefWidth="200.0">
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="215.0" spacing="1.0">
             <children>
-                <Label text="1 1">
+                <Label fx:id="label_row_9" styleClass="labels" text="1 1">
                     <padding>
                         <Insets right="3.0"/>
                     </padding>
                 </Label>
                 <Button fx:id="btn_9_0" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_1" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_2" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_3" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_4" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_5" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_6" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_7" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_8" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
                 <Button fx:id="btn_9_9" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickButton"
-                        prefHeight="20.0" prefWidth="20.0">
-                    <font>
-                        <Font size="9.0"/>
-                    </font>
+                        styleClass="board-buttons">
                 </Button>
             </children>
         </HBox>

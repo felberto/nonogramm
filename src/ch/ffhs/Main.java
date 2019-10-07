@@ -36,6 +36,7 @@ public class Main extends Application {
             startController.setMain(this);
 
             Scene scene = new Scene(pane);
+            scene.getStylesheets().add("ch/ffhs/css/board-style.css");
 
             primaryStage.setScene(scene);
             primaryStage.show();
