@@ -7,6 +7,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -70,6 +73,15 @@ public class BoardController {
                 btn.setStyle("-fx-base: #eaeaea;");
                 btn.setText("X");
                 break;
+        }
+    }
+
+    @FXML
+    private void clickSave(final ActionEvent event) throws IOException {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("save.json", false))) {
+            bw.write(Arrays.deepToString(this.board.getBoard()));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

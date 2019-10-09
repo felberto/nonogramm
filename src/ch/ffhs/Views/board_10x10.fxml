@@ -712,5 +712,12 @@
                 </Button>
             </children>
         </HBox>
+        <HBox alignment="CENTER" prefHeight="77.0" prefWidth="326.0" spacing="140.0">
+            <children>
+                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#clickSave"
+                        style="-fx-background-color: none; -fx-border-color: #645E9D; -fx-border-width: 2; -fx-font-size: 20; -fx-text-fill: #645E9D; -fx-spacing: 2"
+                        text="Speichern"/>
+            </children>
+        </HBox>
     </children>
 </VBox>

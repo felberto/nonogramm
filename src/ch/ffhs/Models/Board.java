@@ -33,4 +33,8 @@ public class Board {
         }
         return board[row][column];
     }
+
+    public State[][] getBoard() {
+        return board;
+    }
 }
