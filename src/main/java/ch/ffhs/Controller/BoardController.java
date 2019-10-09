@@ -12,6 +12,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -156,6 +157,35 @@ public class BoardController {
                     buttons[i][j].setStyle("-fx-background-color: none;");
                 }
             }
+        }
+    }
+
+    @FXML
+    private void clickSave(final ActionEvent event) throws IOException {
+        JSONObject saveGame = new JSONObject();
+        saveGame.put("id", actualBoard.get("id"));
+
+        JSONArray list = new JSONArray();
+
+        for (int i = 0; i < buttons.length; i++) {
+            JSONArray array = new JSONArray();
+            for (int j = 0; j < buttons[i].length; j++) {
+                if (buttons[i][j].getStyle().toString() == "-fx-background-color: #645E9D") {
+                    array.add(true);
+                } else {
+                    array.add(false);
+                }
+
+            }
+            list.add(array);
+        }
+
+        saveGame.put("buttons", list);
+
+        try (FileWriter file = new FileWriter("save.json")) {
+            file.write(saveGame.toJSONString());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
