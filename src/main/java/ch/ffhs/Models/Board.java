@@ -7,19 +7,25 @@ import java.util.Arrays;
 public class Board {
 
     private State[][] board;
+    private int size;
 
     public Board(int length) {
+        size = length;
         createInitialState(length);
     }
 
     private void createInitialState(int length) {
         board = new State[length][length];
+        resetBoard();
+    }
+
+    public void resetBoard() {
         for (State[] row : board) {
             Arrays.fill(row, State.UNDEFINED);
         }
     }
 
-    public State setState(int row, int column) {
+    public State setNextState(int row, int column) {
         switch (board[row][column]) {
             case UNDEFINED:
                 board[row][column] = State.MARKED;
@@ -32,6 +38,10 @@ public class Board {
                 break;
         }
         return board[row][column];
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public State[][] getBoard() {

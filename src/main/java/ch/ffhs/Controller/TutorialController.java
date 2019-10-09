@@ -19,6 +19,6 @@ public class TutorialController {
     @FXML
     private void clickBack(final ActionEvent event) throws IOException {
         this.vbox_main.getChildren().clear();
-        this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/home.fxml")));
+        this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/home.fxml")));
     }
 }

@@ -14,6 +14,6 @@ public class HighscoreController {
     @FXML
     private void clickBack(final ActionEvent event) throws IOException {
         this.anchorPane_main.getChildren().clear();
-        this.anchorPane_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/start.fxml")));
+        this.anchorPane_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/start.fxml")));
     }
 }
