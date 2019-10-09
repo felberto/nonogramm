@@ -48,7 +48,7 @@ public class BoardController {
                 label_row_6, label_row_7, label_row_8, label_row_9};
 
         // get labels
-        String filePath = "src/ch/ffhs/resources/games.json";
+        String filePath = getClass().getResource("/games.json").toString();
         try {
             FileReader reader = new FileReader(filePath);
             JSONParser jsonParser = new JSONParser();
