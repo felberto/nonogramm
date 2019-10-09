@@ -26,7 +26,7 @@ public class Main extends Application {
 
     public void mainView() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("Views/start.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/start.fxml"));
             AnchorPane pane = loader.load();
 
             primaryStage.setMinHeight(600.00);
@@ -36,7 +36,7 @@ public class Main extends Application {
             startController.setMain(this);
 
             Scene scene = new Scene(pane);
-            scene.getStylesheets().add("ch/ffhs/css/board-style.css");
+            scene.getStylesheets().add(getClass().getResource("/css/board-style.css").toString());
 
             primaryStage.setScene(scene);
             primaryStage.show();
