@@ -40,7 +40,7 @@ public class HomeController {
 
     private void createBoard() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("Views/board_10x10.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/board_10x10.fxml"));
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
@@ -54,13 +54,13 @@ public class HomeController {
     @FXML
     private void clickTutorial(final ActionEvent event) throws IOException {
         this.vbox_main.getChildren().clear();
-        this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/tutorial.fxml")));
+        this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/tutorial.fxml")));
     }
 
     @FXML
     private void clickBack(final ActionEvent event) throws IOException {
         this.vbox_main.getChildren().clear();
-        this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/start.fxml")));
+        this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/start.fxml")));
     }
 
     @FXML

@@ -166,7 +166,7 @@ public class BoardController {
 
     private void loadBoard(int boardId) {
         // get labels
-        String filePath = "src/ch/ffhs/resources/games.json";
+        String filePath = getClass().getResource("/games.json").getPath();
         try {
             FileReader reader = new FileReader(filePath);
             JSONParser jsonParser = new JSONParser();

@@ -26,12 +26,12 @@ public class StartController {
     @FXML
     private void clickPlay(final ActionEvent event) throws IOException {
         this.anchorPane_main.getChildren().clear();
-        this.anchorPane_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/home.fxml")));
+        this.anchorPane_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/home.fxml")));
     }
 
     @FXML
     private void clickHighscore(final ActionEvent event) throws IOException {
         this.anchorPane_main.getChildren().clear();
-        this.anchorPane_main.getChildren().add(FXMLLoader.load(getClass().getResource("../Views/highscore.fxml")));
+        this.anchorPane_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/highscore.fxml")));
     }
 }
