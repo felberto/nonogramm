@@ -21,6 +21,8 @@ public class BoardController {
     private Board board;
     private Button[][] buttons;
     private JSONObject actualBoard;
+    private String level;
+    private int actualBoardId;
 
     @FXML
     private Button btn_0_0, btn_0_1, btn_0_2, btn_0_3, btn_0_4, btn_0_5, btn_0_6, btn_0_7, btn_0_8, btn_0_9,
@@ -46,23 +48,6 @@ public class BoardController {
 
         rowLabels = new Label[]{label_row_0, label_row_1, label_row_2, label_row_3, label_row_4, label_row_5,
                 label_row_6, label_row_7, label_row_8, label_row_9};
-
-        // get labels
-        String filePath = "src/ch/ffhs/resources/games.json";
-        try {
-            FileReader reader = new FileReader(filePath);
-            JSONParser jsonParser = new JSONParser();
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
-            JSONObject games = (JSONObject) jsonObject.get("games");
-            JSONArray boards = (JSONArray) games.get("10x10");
-            // load first board
-            actualBoard = (JSONObject) boards.get(0);
-            setLabels(actualBoard);
-        } catch (IOException | ParseException ex) {
-            System.out.println("Error loading file");
-        }
-
-        board = new Board(10);
 
         buttons = new Button[][]{
                 {btn_0_0, btn_0_1, btn_0_2, btn_0_3, btn_0_4, btn_0_5, btn_0_6, btn_0_7, btn_0_8, btn_0_9},
@@ -138,6 +123,10 @@ public class BoardController {
 
     public void restart() {
         board.resetBoard();
+        clearBoardLayout();
+    }
+
+    private void clearBoardLayout() {
         for (int i = 0; i < board.getSize(); i++) {
             for (int j = 0; j < board.getSize(); j++) {
                 buttons[i][j].setStyle("-fx-background-color: none");
@@ -157,5 +146,45 @@ public class BoardController {
                 }
             }
         }
+    }
+
+    private void setLevel(String level) {
+        switch (level) {
+            case "Level: 10x10":
+                this.level = "10x10";
+                break;
+            case "Level: 15x15":
+                this.level = "15x15";
+                break;
+        }
+    }
+
+    public void startGame(String levelString) {
+        setLevel(levelString);
+        loadBoard(0);
+    }
+
+    private void loadBoard(int boardId) {
+        // get labels
+        String filePath = "src/ch/ffhs/resources/games.json";
+        try {
+            FileReader reader = new FileReader(filePath);
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+            JSONObject games = (JSONObject) jsonObject.get("games");
+            JSONArray boards = (JSONArray) games.get(this.level);
+
+            actualBoard = (JSONObject) boards.get(boardId);
+            setLabels(actualBoard);
+            this.actualBoardId = boardId;
+        } catch (IOException | ParseException ex) {
+            System.out.println("Error loading file");
+        }
+        board = new Board(this.level.equals("10x10") ? 10 : 15);
+    }
+
+    public void loadNextGame() {
+        loadBoard((this.actualBoardId + 1) % 4);
+        clearBoardLayout();
     }
 }
