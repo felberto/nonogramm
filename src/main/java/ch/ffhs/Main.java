@@ -1,6 +1,5 @@
 package ch.ffhs;
 
-import ch.ffhs.Controller.StartController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,9 +30,6 @@ public class Main extends Application {
 
             primaryStage.setMinHeight(600.00);
             primaryStage.setMinWidth(600.00);
-
-            StartController startController = loader.getController();
-            startController.setMain(this);
 
             Scene scene = new Scene(pane);
             scene.getStylesheets().add(getClass().getResource("/css/board-style.css").toString());

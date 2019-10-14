@@ -1,6 +1,5 @@
 package ch.ffhs.Controller;
 
-import ch.ffhs.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +13,6 @@ import java.io.IOException;
 
 public class HomeController {
 
-    public Main main;
     @FXML
     private VBox vbox_main;
     @FXML
@@ -24,11 +22,7 @@ public class HomeController {
     @FXML
     private ChoiceBox<String> choiceBoxLevel;
 
-    private BoardController boardController;
-
-    public void setMain(Main main) {
-        this.main = main;
-    }
+    private BoardController10x10 boardController;
 
     // called on initialization
     public void initialize() {
