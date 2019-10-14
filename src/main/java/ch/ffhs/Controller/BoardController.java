@@ -141,9 +141,9 @@ public class BoardController {
                 if (solutionArray[i][j]) {
                     buttons[i][j].setStyle("-fx-background-color: #645E9D");
                 } else {
-                    buttons[i][j].setText("");
                     buttons[i][j].setStyle("-fx-background-color: none;");
                 }
+                buttons[i][j].setText("");
             }
         }
     }
