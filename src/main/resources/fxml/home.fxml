@@ -10,23 +10,26 @@
               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
               AnchorPane.topAnchor="0.0">
             <children>
-                <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="428.0">
+                <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="428.0" spacing="130.0">
                     <children>
-                        <Button fx:id="btnTutorial" mnemonicParsing="false" onAction="#clickTutorial"
+                        <Button fx:id="btnTutorial" mnemonicParsing="false" onAction="#clickTutorial" prefHeight="48.0"
+                                prefWidth="103.0"
                                 style="-fx-background-color: none; -fx-border-color: #645E9D; -fx-border-width: 2; -fx-font-size: 20; -fx-text-fill: #645E9D; -fx-spacing: 2"
                                 text="Tutorial"/>
+                        <ChoiceBox fx:id="choiceBoxLevel" prefHeight="48.0" prefWidth="200.0"/>
                     </children>
                 </HBox>
                 <VBox fx:id="vbox_home" alignment="CENTER" maxWidth="-Infinity" prefWidth="428.0"
                       style="-fx-border-width: 0.125em; -fx-border-style: solid; -fx-border-color: #72a0ab; -fx-padding: 1em 6em 1em 1em;">
                 </VBox>
-                <HBox alignment="CENTER" spacing="135.0">
+                <HBox alignment="CENTER" spacing="180.0">
                     <children>
                         <Button fx:id="btnRestart" mnemonicParsing="false" onAction="#clickRestart"
                                 style="-fx-background-color: none; -fx-border-color: #645E9D; -fx-border-width: 2; -fx-font-size: 20; -fx-text-fill: #645E9D;"
                                 text="Restart"/>
-                        <ChoiceBox fx:id="choiceBoxLevel" prefHeight="48.0" prefWidth="200.0"
-                                   style="-fx-background-color: none; -fx-border-color: #645E9D; -fx-border-width: 2; -fx-font-size: 20; -fx-text-fill: #645E9D;"/>
+                        <Button fx:id="btnNextGame" mnemonicParsing="false" onAction="#clickNextGame"
+                                style="-fx-background-color: none; -fx-border-color: #645E9D; -fx-text-fill: #645E9D; -fx-border-width: 2; -fx-font-size: 20;"
+                                text="Nächstes Spiel"/>
 
                     </children>
                 </HBox>

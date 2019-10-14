@@ -32,10 +32,10 @@ public class HomeController {
 
     // called on initialization
     public void initialize() {
-        createBoard();
         ObservableList<String> options = FXCollections.observableArrayList("Level: 10x10", "Level: 15x15");
         choiceBoxLevel.setItems(options);
         choiceBoxLevel.setValue(options.get(0));
+        createBoard();
     }
 
     private void createBoard() {
@@ -44,6 +44,8 @@ public class HomeController {
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
+            boardController.startGame(choiceBoxLevel.getValue());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,5 +79,10 @@ public class HomeController {
         } else {
             boardController.restart();
         }
+    }
+
+    @FXML
+    private void clickNextGame() {
+        boardController.loadNextGame();
     }
 }
