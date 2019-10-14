@@ -69,6 +69,118 @@
           [false, false, false, true, true, true, true, false, false, false]
         ]
       }
+    ],
+    "15x15": [
+      {
+        "id": "5",
+        "rows": [[8], [1, 1], [8], [2], [4], [2, 2], [4], [2, 2], [4, 6], [1], [4, 4, 1], [2, 2, 1, 1], [4, 1, 1], [3], [0]],
+        "columns": [[1, 1], [1, 1], [3, 1, 1], [1, 1, 1, 2, 2], [1, 1, 4, 2], [1, 3, 1, 1], [1, 3, 1, 1], [1, 1, 4, 2], [1, 1, 1, 2, 2], [3, 1, 1], [1, 1], [1, 4], [1, 1], [6], [0]],
+        "solution": [
+          [false, false, true, true, true, true, true, true, true, true, false, false, false, false, false],
+          [false, false, true, false, false, false, false, false, false, true, false, false, false, false, false],
+          [false, false, true, true, true, true, true, true, true, true, false, false, false, false, false],
+          [false, false, false, false, false, true, true, false, false, false, false, false, false, false, false],
+          [false, false, false, false, true, true, true, true, false, false, false, false, false, false, false],
+          [false, false, false, true, true, false, false, true, true, false, false, false, false, false, false],
+          [false, false, false, false, true, true, true, true, false, false, false, false, false, false, false],
+          [false, false, false, true, true, false, false, true, true, false, false, false, false, false, false],
+          [true, true, true, true, false, false, false, false, true, true, true, true, true, true, false],
+          [false, false, false, false, false, false, false, false, false, false, false, false, false, true, false],
+          [true, true, true, true, false, false, false, false, true, true, true, true, false, true, false],
+          [false, false, false, true, true, false, false, true, true, false, false, true, false, true, false],
+          [false, false, false, false, true, true, true, true, false, false, false, true, false, true, false],
+          [false, false, false, false, false, false, false, false, false, false, false, true, true, true, false],
+          [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+        ]
+      },
+      {
+        "id": "6",
+        "rows": [[], [], [], [], [], [], [6], [0], [4], [4], [], [], [], [], []],
+        "columns": [[0], [3], [7], [2, 3, 2], [7, 2], [7, 2], [2, 3, 2], [7], [3], [0], [], [], [], [], []],
+        "solution": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "id": "7",
+        "rows": [[], [], [], [], [], [], [6], [0], [4], [4], [], [], [], [], []],
+        "columns": [[0], [3], [7], [2, 3, 2], [7, 2], [7, 2], [2, 3, 2], [7], [3], [0], [], [], [], [], []],
+        "solution": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "id": "8",
+        "rows": [[], [], [], [], [], [], [6], [0], [4], [4], [], [], [], [], []],
+        "columns": [[0], [3], [7], [2, 3, 2], [7, 2], [7, 2], [2, 3, 2], [7], [3], [0], [], [], [], [], []],
+        "solution": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      {
+        "id": "9",
+        "rows": [[], [], [], [], [], [], [6], [0], [4], [4], [], [], [], [], []],
+        "columns": [[0], [3], [7], [2, 3, 2], [7, 2], [7, 2], [2, 3, 2], [7], [3], [0], [], [], [], [], []],
+        "solution": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      }
     ]
   }
 }

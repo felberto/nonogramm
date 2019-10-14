@@ -22,7 +22,7 @@ public class HomeController {
     @FXML
     private ChoiceBox<String> choiceBoxLevel;
 
-    private BoardController10x10 boardController;
+    private BoardController boardController;
 
     // called on initialization
     public void initialize() {
@@ -39,7 +39,6 @@ public class HomeController {
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
             boardController.startGame(choiceBoxLevel.getValue());
-
         } catch (IOException e) {
             e.printStackTrace();
         }
