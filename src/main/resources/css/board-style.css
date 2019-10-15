@@ -1,0 +1,40 @@
+.labels {
+    -fx-text-fill: white;
+}
+
+.board-buttons {
+    -fx-background-color: none;
+    -fx-border-color: #645E9D;
+    -fx-border-radius: 0.25em;
+    -fx-pref-width: 25px;
+    -fx-pref-height: 25px;
+    -fx-font-size: 9px;
+}
+
+.choice-box {
+    -fx-background-color: none;
+    -fx-border-color: #645E9D;
+    -fx-border-width: 2;
+    -fx-font-size: 20;
+    -fx-text-fill: #645E9D;
+    -fx-mark-color: #645E9D;
+}
+
+.choice-box > .label {
+    -fx-text-fill: #645E9D;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: #645E9D;
+    -fx-border-color: #645E9D;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: rgba(140, 133, 212, 0.74);
+}
+
+.choice-box .menu-item > .label {
+    -fx-text-fill: white;
+}
+
+
