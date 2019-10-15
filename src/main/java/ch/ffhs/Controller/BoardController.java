@@ -188,4 +188,10 @@ public class BoardController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void clickLoad(final ActionEvent event) {
+        //TODO: load save.json file
+
+    }
 }
