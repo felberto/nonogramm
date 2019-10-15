@@ -9,7 +9,7 @@ addons:
       secure: ${SONAR_TOKEN}
 
 jdk:
-  - openjdk11
+  - openjdk12
 
 jobs:
   include:
