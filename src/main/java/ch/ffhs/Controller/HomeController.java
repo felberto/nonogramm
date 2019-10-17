@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.VBox;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
@@ -40,13 +41,15 @@ public class HomeController {
 
     private void createBoard() {
         try {
+            //TODO load game if savegame exists
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/board_10x10.fxml"));
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
             boardController.startGame(choiceBoxLevel.getValue());
+            boardController.loadGame();
 
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
@@ -55,12 +58,14 @@ public class HomeController {
     private void clickTutorial(final ActionEvent event) throws IOException {
         this.vbox_main.getChildren().clear();
         this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/tutorial.fxml")));
+        boardController.saveGame();
     }
 
     @FXML
     private void clickBack(final ActionEvent event) throws IOException {
         this.vbox_main.getChildren().clear();
         this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/start.fxml")));
+        boardController.saveGame();
     }
 
     @FXML

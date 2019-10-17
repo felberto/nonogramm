@@ -11,6 +11,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -189,17 +190,16 @@ public class BoardController {
         clearBoardLayout();
     }
 
-    @FXML
-    private void clickSave(final ActionEvent event) throws IOException {
+    public void saveGame() {
         JSONObject saveGame = new JSONObject();
-        saveGame.put("id", actualBoard.get("id"));
+        saveGame.put("id", this.actualBoardId);
 
         JSONArray list = new JSONArray();
 
-        for (int i = 0; i < buttons.length; i++) {
+        for (Button[] button : buttons) {
             JSONArray array = new JSONArray();
-            for (int j = 0; j < buttons[i].length; j++) {
-                if (buttons[i][j].getStyle().toString() == "-fx-background-color: #645E9D") {
+            for (Button value : button) {
+                if (value.getStyle().equals("-fx-background-color: #645E9D")) {
                     array.add(true);
                 } else {
                     array.add(false);
@@ -218,9 +218,16 @@ public class BoardController {
         }
     }
 
-    @FXML
-    private void clickLoad(final ActionEvent event) {
-        //TODO: load save.json file
-
+    public void loadGame() throws IOException, ParseException {
+        File file = new File("save.json");
+        if (file.exists()) {
+            FileReader reader = new FileReader("save.json");
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+            Long id = (Long) jsonObject.get("id");
+            JSONArray buttons = (JSONArray) jsonObject.get("buttons");
+            System.out.println(id);
+            System.out.println(buttons);
+        }
     }
 }
