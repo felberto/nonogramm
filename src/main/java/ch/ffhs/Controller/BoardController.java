@@ -225,9 +225,16 @@ public class BoardController {
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
             Long id = (Long) jsonObject.get("id");
-            JSONArray buttons = (JSONArray) jsonObject.get("buttons");
-            System.out.println(id);
-            System.out.println(buttons);
+            JSONArray saveArray = (JSONArray) jsonObject.get("buttons");
+            boolean[][] saveState = new boolean[saveArray.size()][saveArray.size()];
+            for (int i = 0; i < saveArray.size(); i++) {
+                JSONArray row = (JSONArray) saveArray.get(i);
+                for (int j = 0; j < row.size(); j++) {
+                    saveState[i][j] = (boolean) row.get(j);
+                }
+            }
+            loadBoard(Integer.parseInt(id.toString()));
+            setSolutionState(saveState);
         }
     }
 }

@@ -41,7 +41,6 @@ public class HomeController {
 
     private void createBoard() {
         try {
-            //TODO load game if savegame exists
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/board_10x10.fxml"));
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
