@@ -4,6 +4,9 @@ import ch.ffhs.Shared.State;
 
 import java.util.Arrays;
 
+/**
+ * Class for board
+ */
 public class Board {
 
     private State[][] board;

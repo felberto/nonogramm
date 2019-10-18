@@ -9,6 +9,9 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+/**
+ * Controller for start
+ */
 public class StartController {
 
     public Main main;

@@ -8,6 +8,9 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
+/**
+ * Controller for tutorial
+ */
 public class TutorialController {
 
     @FXML

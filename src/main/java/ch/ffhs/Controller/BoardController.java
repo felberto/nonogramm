@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Controller for board
+ */
 public class BoardController {
 
     private Board board;

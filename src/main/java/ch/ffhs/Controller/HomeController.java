@@ -13,6 +13,9 @@ import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
+/**
+ * Controller for home
+ */
 public class HomeController {
 
     public Main main;
