@@ -11,11 +11,16 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Controller for board
+ */
 public class BoardController {
 
     private Board board;
@@ -186,5 +191,53 @@ public class BoardController {
     public void loadNextGame() {
         loadBoard((this.actualBoardId + 1) % 4);
         clearBoardLayout();
+    }
+
+    public void saveGame() {
+        JSONObject saveGame = new JSONObject();
+        saveGame.put("id", this.actualBoardId);
+
+        JSONArray list = new JSONArray();
+
+        for (Button[] button : buttons) {
+            JSONArray array = new JSONArray();
+            for (Button value : button) {
+                if (value.getStyle().equals("-fx-background-color: #645E9D")) {
+                    array.add(true);
+                } else {
+                    array.add(false);
+                }
+
+            }
+            list.add(array);
+        }
+
+        saveGame.put("buttons", list);
+
+        try (FileWriter file = new FileWriter("save.json")) {
+            file.write(saveGame.toJSONString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadGame() throws IOException, ParseException {
+        File file = new File("save.json");
+        if (file.exists()) {
+            FileReader reader = new FileReader("save.json");
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+            Long id = (Long) jsonObject.get("id");
+            JSONArray saveArray = (JSONArray) jsonObject.get("buttons");
+            boolean[][] saveState = new boolean[saveArray.size()][saveArray.size()];
+            for (int i = 0; i < saveArray.size(); i++) {
+                JSONArray row = (JSONArray) saveArray.get(i);
+                for (int j = 0; j < row.size(); j++) {
+                    saveState[i][j] = (boolean) row.get(j);
+                }
+            }
+            loadBoard(Integer.parseInt(id.toString()));
+            setSolutionState(saveState);
+        }
     }
 }
