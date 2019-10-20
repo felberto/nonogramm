@@ -1,5 +1,6 @@
 package ch.ffhs.Controller;
 
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,19 +27,35 @@ public class HomeController {
 
     // called on initialization
     public void initialize() {
+        ChangeListener<String> changeListener = (observableValue, oldValue, newValue) -> createBoard();
         ObservableList<String> options = FXCollections.observableArrayList("Level: 10x10", "Level: 15x15");
         choiceBoxLevel.setItems(options);
         choiceBoxLevel.setValue(options.get(0));
+        choiceBoxLevel.getSelectionModel().selectedItemProperty().addListener(changeListener);
         createBoard();
     }
 
     private void createBoard() {
+        int level;
+        String boardPath;
+        if (choiceBoxLevel.getValue().equals("Level: 10x10")) {
+            level = 10;
+            boardPath = "/fxml/board_10x10.fxml";
+        } else {
+            level = 15;
+            boardPath = "/fxml/board_15x15.fxml";
+        }
+
+        //remove children
+        if (vbox_home.getChildren().size() > 0) {
+            vbox_home.getChildren().clear();
+        }
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/board_10x10.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(boardPath));
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
-            boardController.startGame(choiceBoxLevel.getValue());
+            boardController.startGame(level);
         } catch (IOException e) {
             e.printStackTrace();
         }

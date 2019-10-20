@@ -21,7 +21,7 @@ public abstract class BoardController {
     private Board board;
     private Button[][] buttons;
     private JSONObject actualBoard;
-    private String level;
+    private int level;
     private int actualBoardId;
 
     private Label[] columnLabels, rowLabels;
@@ -125,19 +125,8 @@ public abstract class BoardController {
         }
     }
 
-    private void setLevel(String level) {
-        switch (level) {
-            case "Level: 10x10":
-                this.level = "10x10";
-                break;
-            case "Level: 15x15":
-                this.level = "15x15";
-                break;
-        }
-    }
-
-    public void startGame(String levelString) {
-        setLevel(levelString);
+    public void startGame(int level) {
+        this.level = level;
         loadBoard(0);
     }
 
@@ -149,7 +138,7 @@ public abstract class BoardController {
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
             JSONObject games = (JSONObject) jsonObject.get("games");
-            JSONArray boards = (JSONArray) games.get(this.level);
+            JSONArray boards = (JSONArray) games.get(this.level == 10 ? "10x10" : "15x15");
 
             actualBoard = (JSONObject) boards.get(boardId);
             setLabels(actualBoard);
@@ -157,7 +146,7 @@ public abstract class BoardController {
         } catch (IOException | ParseException ex) {
             System.out.println("Error loading file");
         }
-        board = new Board(this.level.equals("10x10") ? 10 : 15);
+        board = new Board(this.level);
     }
 
     public void loadNextGame() {
