@@ -8,6 +8,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Main class of nonogramm application
+ *
+ * @author Tobias Felber
+ * @author Melanie Ockenfels
+ */
 public class Main extends Application {
 
     private Stage primaryStage;
@@ -23,7 +29,7 @@ public class Main extends Application {
         launch(args);
     }
 
-    public void mainView() {
+    private void mainView() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/start.fxml"));
             AnchorPane pane = loader.load();
@@ -37,6 +43,7 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 }
