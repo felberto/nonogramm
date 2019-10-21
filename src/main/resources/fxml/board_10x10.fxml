@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="1.0" AnchorPane.leftAnchor="0.0"
       AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1"
-      fx:controller="ch.ffhs.Controller.BoardController">
+      fx:controller="ch.ffhs.Controller.BoardController10x10">
     <children>
         <HBox alignment="BOTTOM_RIGHT" spacing="1.0">
             <children>

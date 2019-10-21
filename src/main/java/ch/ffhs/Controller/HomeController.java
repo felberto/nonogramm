@@ -1,6 +1,6 @@
 package ch.ffhs.Controller;
 
-import ch.ffhs.Main;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,8 +9,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.VBox;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 /**
@@ -18,7 +22,6 @@ import java.io.IOException;
  */
 public class HomeController {
 
-    public Main main;
     @FXML
     private VBox vbox_main;
     @FXML
@@ -29,29 +32,70 @@ public class HomeController {
     private ChoiceBox<String> choiceBoxLevel;
 
     private BoardController boardController;
-
-    public void setMain(Main main) {
-        this.main = main;
-    }
+    private ObservableList<String> options;
 
     // called on initialization
     public void initialize() {
-        ObservableList<String> options = FXCollections.observableArrayList("Level: 10x10", "Level: 15x15");
+        ChangeListener<String> changeListener = (observableValue, oldValue, newValue) -> createBoard(false);
+        options = FXCollections.observableArrayList("Level: 10x10", "Level: 15x15");
         choiceBoxLevel.setItems(options);
-        choiceBoxLevel.setValue(options.get(0));
-        createBoard();
+        createBoard(true);
+        choiceBoxLevel.getSelectionModel().selectedItemProperty().addListener(changeListener);
     }
 
-    private void createBoard() {
+    private void createBoard(boolean isInitialLoad) {
+        int level = 10;
+        String boardPath = "/fxml/board_10x10.fxml";
+
+        if (isInitialLoad) {
+            File file = new File("save.json");
+            if (file.exists()) {
+                try {
+                    FileReader reader = new FileReader("save.json");
+                    JSONParser jsonParser = new JSONParser();
+                    JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+                    int savedLevel = Integer.parseInt(jsonObject.get("level").toString());
+                    if (savedLevel == 10) {
+                        choiceBoxLevel.setValue(options.get(0));
+                        level = 10;
+                        boardPath = "/fxml/board_10x10.fxml";
+                    }
+                    else {
+                        choiceBoxLevel.setValue(options.get(1));
+                        level = 15;
+                        boardPath = "/fxml/board_15x15.fxml";
+                    }
+                } catch (ParseException | IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else { // no file, initial load
+                choiceBoxLevel.setValue(options.get(0));
+            }
+        }
+        else { // not initial load
+            if (choiceBoxLevel.getValue().equals("Level: 10x10")) {
+                level = 10;
+                boardPath = "/fxml/board_10x10.fxml";
+            }
+            else {
+                level = 15;
+                boardPath = "/fxml/board_15x15.fxml";
+            }
+
+            //remove children
+            if (vbox_home.getChildren().size() > 0) {
+                vbox_home.getChildren().clear();
+            }
+        }
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/board_10x10.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(boardPath));
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
-            boardController.startGame(choiceBoxLevel.getValue());
-            boardController.loadGame();
-
-        } catch (IOException | ParseException e) {
+            boardController.startGame(level);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
