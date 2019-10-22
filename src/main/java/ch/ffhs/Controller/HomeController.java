@@ -97,8 +97,16 @@ public class HomeController {
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
             boardController.startGame(level);
-            counterService.setTimer(boardController.getTimer());
-            counterService.start();
+            if (isInitialLoad) {
+                counterService.setTimer(boardController.getTimer());
+            } else {
+                counterService.setTimer(0);
+            }
+            if (!counterService.isRunning()) {
+                counterService.start();
+            } else {
+                counterService.restart();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
