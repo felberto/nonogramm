@@ -28,6 +28,7 @@ public abstract class BoardController {
     private JSONObject actualBoard;
     private int level;
     private int actualBoardId;
+    private int timer;
 
     private Label[] columnLabels, rowLabels;
 
@@ -163,9 +164,10 @@ public abstract class BoardController {
         clearBoardLayout();
     }
 
-    public void saveGame() {
+    public void saveGame(String time) {
         JSONObject saveGame = new JSONObject();
         saveGame.put("id", this.actualBoardId);
+        saveGame.put("time", Integer.parseInt(time));
         saveGame.put("level", this.level);
 
         JSONArray list = new JSONArray();
@@ -201,9 +203,10 @@ public abstract class BoardController {
             int currentLevel = Integer.parseInt(jsonObject.get("level").toString());
             if (currentLevel != this.level) {
                 loadBoard(0);
-            }
-            else {
+            } else {
                 Long id = (Long) jsonObject.get("id");
+                Long timer = (Long) jsonObject.get("time");
+                setTimer(timer.intValue());
                 JSONArray saveArray = (JSONArray) jsonObject.get("buttons");
                 boolean[][] saveState = new boolean[saveArray.size()][saveArray.size()];
                 for (int i = 0; i < saveArray.size(); i++) {
@@ -215,9 +218,16 @@ public abstract class BoardController {
                 loadBoard(Integer.parseInt(id.toString()));
                 setSolutionState(saveState);
             }
-        }
-        else {
+        } else {
             loadBoard(0);
         }
+    }
+
+    public int getTimer() {
+        return timer;
+    }
+
+    public void setTimer(int timer) {
+        this.timer = timer;
     }
 }

@@ -1,5 +1,6 @@
 package ch.ffhs.Controller;
 
+import ch.ffhs.Service.CounterService;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -30,9 +32,12 @@ public class HomeController {
     private VBox vbox_home;
     @FXML
     private ChoiceBox<String> choiceBoxLevel;
+    CounterService counterService = new CounterService();
 
     private BoardController boardController;
     private ObservableList<String> options;
+    @FXML
+    private Label timer;
 
     // called on initialization
     public void initialize() {
@@ -41,6 +46,7 @@ public class HomeController {
         choiceBoxLevel.setItems(options);
         createBoard(true);
         choiceBoxLevel.getSelectionModel().selectedItemProperty().addListener(changeListener);
+        timer.textProperty().bind(counterService.messageProperty());
     }
 
     private void createBoard(boolean isInitialLoad) {
@@ -59,8 +65,7 @@ public class HomeController {
                         choiceBoxLevel.setValue(options.get(0));
                         level = 10;
                         boardPath = "/fxml/board_10x10.fxml";
-                    }
-                    else {
+                    } else {
                         choiceBoxLevel.setValue(options.get(1));
                         level = 15;
                         boardPath = "/fxml/board_15x15.fxml";
@@ -68,17 +73,14 @@ public class HomeController {
                 } catch (ParseException | IOException e) {
                     e.printStackTrace();
                 }
-            }
-            else { // no file, initial load
+            } else { // no file, initial load
                 choiceBoxLevel.setValue(options.get(0));
             }
-        }
-        else { // not initial load
+        } else { // not initial load
             if (choiceBoxLevel.getValue().equals("Level: 10x10")) {
                 level = 10;
                 boardPath = "/fxml/board_10x10.fxml";
-            }
-            else {
+            } else {
                 level = 15;
                 boardPath = "/fxml/board_15x15.fxml";
             }
@@ -95,6 +97,16 @@ public class HomeController {
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
             boardController.startGame(level);
+            if (isInitialLoad) {
+                counterService.setTimer(boardController.getTimer());
+            } else {
+                counterService.setTimer(0);
+            }
+            if (!counterService.isRunning()) {
+                counterService.start();
+            } else {
+                counterService.restart();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -104,14 +116,14 @@ public class HomeController {
     private void clickTutorial(final ActionEvent event) throws IOException {
         this.vbox_main.getChildren().clear();
         this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/tutorial.fxml")));
-        boardController.saveGame();
+        boardController.saveGame(timer.getText());
     }
 
     @FXML
     private void clickBack(final ActionEvent event) throws IOException {
         this.vbox_main.getChildren().clear();
         this.vbox_main.getChildren().add(FXMLLoader.load(getClass().getResource("/fxml/start.fxml")));
-        boardController.saveGame();
+        boardController.saveGame(timer.getText());
     }
 
     @FXML
@@ -120,6 +132,8 @@ public class HomeController {
             return;
         } else {
             boardController.loadSolution();
+            counterService.setTimer(0);
+            counterService.cancel();
         }
     }
 
@@ -129,11 +143,15 @@ public class HomeController {
             return;
         } else {
             boardController.restart();
+            counterService.setTimer(0);
+            counterService.restart();
         }
     }
 
     @FXML
     private void clickNextGame() {
         boardController.loadNextGame();
+        counterService.setTimer(0);
+        counterService.restart();
     }
 }
