@@ -82,7 +82,7 @@ public abstract class BoardController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fertig");
 
-            alert.setContentText("Herzlichen Glückwunsch!");
+            alert.setHeaderText("Herzlichen Glückwunsch!");
 
             alert.showAndWait();
         }
