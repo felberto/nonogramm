@@ -2,12 +2,26 @@
     -fx-text-fill: white;
 }
 
+.labels-small {
+    -fx-text-fill: white;
+    -fx-pref-width: 20px;
+}
+
 .board-buttons {
     -fx-background-color: none;
     -fx-border-color: #645E9D;
     -fx-border-radius: 0.25em;
     -fx-pref-width: 25px;
     -fx-pref-height: 25px;
+    -fx-font-size: 9px;
+}
+
+.board-buttons-small {
+    -fx-background-color: none;
+    -fx-border-color: #645E9D;
+    -fx-border-radius: 0.25em;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
     -fx-font-size: 9px;
 }
 

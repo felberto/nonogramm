@@ -7,6 +7,9 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+/**
+ * Controller for highscore
+ */
 public class HighscoreController {
     @FXML
     private AnchorPane anchorPane_main;

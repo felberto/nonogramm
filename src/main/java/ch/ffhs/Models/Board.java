@@ -4,6 +4,9 @@ import ch.ffhs.Shared.State;
 
 import java.util.Arrays;
 
+/**
+ * Class for board
+ */
 public class Board {
 
     private State[][] board;
@@ -42,5 +45,9 @@ public class Board {
 
     public int getSize() {
         return size;
+    }
+
+    public State[][] getBoard() {
+        return board;
     }
 }
