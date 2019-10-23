@@ -49,6 +49,10 @@ public class HomeController {
         timer.textProperty().bind(counterService.messageProperty());
     }
 
+    public void stopCounter() {
+        boardController.checkFinish();
+    }
+
     private void createBoard(boolean isInitialLoad) {
         int level = 10;
         String boardPath = "/fxml/board_10x10.fxml";

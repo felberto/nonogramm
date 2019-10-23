@@ -17,7 +17,6 @@ public class CounterService extends Service<Void> {
                         break;
                     }
 
-                    updateProgress(i, Integer.MAX_VALUE);
                     updateMessage(String.valueOf(i));
 
                     Thread.sleep(1000);
