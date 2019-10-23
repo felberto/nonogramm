@@ -4,6 +4,7 @@ import ch.ffhs.Models.Board;
 import ch.ffhs.Shared.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import org.json.simple.JSONArray;
@@ -78,6 +79,12 @@ public abstract class BoardController {
         setButtonLayout(row, column);
         if (checkFinish()) {
             homeController.counterService.cancel();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fertig");
+
+            alert.setContentText("Herzlichen Glückwunsch!");
+
+            alert.showAndWait();
         }
     }
 
