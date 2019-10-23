@@ -49,10 +49,6 @@ public class HomeController {
         timer.textProperty().bind(counterService.messageProperty());
     }
 
-    public void stopCounter() {
-        boardController.checkFinish();
-    }
-
     private void createBoard(boolean isInitialLoad) {
         int level = 10;
         String boardPath = "/fxml/board_10x10.fxml";
@@ -100,6 +96,7 @@ public class HomeController {
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
+            boardController.setHomeController(this);
             boardController.startGame(level);
             if (isInitialLoad) {
                 counterService.setTimer(boardController.getTimer());

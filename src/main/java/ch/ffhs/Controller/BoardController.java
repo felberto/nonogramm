@@ -4,7 +4,6 @@ import ch.ffhs.Models.Board;
 import ch.ffhs.Shared.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import org.json.simple.JSONArray;
@@ -30,6 +29,7 @@ public abstract class BoardController {
     private int level;
     private int actualBoardId;
     private int timer;
+    private HomeController homeController;
 
     private Label[] columnLabels, rowLabels;
 
@@ -46,6 +46,10 @@ public abstract class BoardController {
     }
 
     public abstract void initialize();
+
+    public void setHomeController(HomeController homeController) {
+        this.homeController = homeController;
+    }
 
     private void setLabels(JSONObject board) {
         JSONArray columns = (JSONArray) board.get("columns");
@@ -73,17 +77,8 @@ public abstract class BoardController {
         int column = Integer.parseInt(index.get(1));
         setButtonLayout(row, column);
         if (checkFinish()) {
-            setFinished(event);
+            homeController.counterService.cancel();
         }
-    }
-
-    private void setFinished(ActionEvent event) throws IOException {
-        System.out.println("Finished");
-        //TODO open finished modal
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.load(getClass().getResource("/fxml/home.fxml").openStream());
-        HomeController controller = fxmlLoader.getController();
-        controller.stopCounter();
     }
 
     public boolean checkFinish() {
