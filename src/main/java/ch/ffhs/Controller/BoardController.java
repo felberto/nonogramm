@@ -4,6 +4,7 @@ import ch.ffhs.Models.Board;
 import ch.ffhs.Shared.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import org.json.simple.JSONArray;
@@ -29,6 +30,7 @@ public abstract class BoardController {
     private int level;
     private int actualBoardId;
     private int timer;
+    private HomeController homeController;
 
     private Label[] columnLabels, rowLabels;
 
@@ -45,6 +47,10 @@ public abstract class BoardController {
     }
 
     public abstract void initialize();
+
+    public void setHomeController(HomeController homeController) {
+        this.homeController = homeController;
+    }
 
     private void setLabels(JSONObject board) {
         JSONArray columns = (JSONArray) board.get("columns");
@@ -65,12 +71,44 @@ public abstract class BoardController {
     }
 
     @FXML
-    public void clickButton(final ActionEvent event) {
+    public void clickButton(final ActionEvent event) throws IOException {
         Button btn = (Button) event.getSource();
         List<String> index = Arrays.asList(btn.getId().replace("btn_", "").split("_"));
         int row = Integer.parseInt(index.get(0));
         int column = Integer.parseInt(index.get(1));
         setButtonLayout(row, column);
+        if (checkFinish()) {
+            homeController.counterService.cancel();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fertig");
+
+            alert.setHeaderText("Herzlichen Glückwunsch!");
+
+            alert.showAndWait();
+        }
+    }
+
+    public boolean checkFinish() {
+        JSONArray solution = (JSONArray) actualBoard.get("solution");
+        boolean[][] solutionArray = new boolean[solution.size()][solution.size()];
+        for (int i = 0; i < solution.size(); i++) {
+            JSONArray row = (JSONArray) solution.get(i);
+            for (int j = 0; j < row.size(); j++) {
+                solutionArray[i][j] = (boolean) row.get(j);
+            }
+        }
+        boolean finished = true;
+        for (int i = 0; i < solutionArray.length; i++) {
+            for (int j = 0; j < solutionArray[i].length; j++) {
+                if (solutionArray[i][j]) {
+                    if (!buttons[i][j].getStyle().equals("-fx-background-color: #645E9D")) {
+                        finished = false;
+                        break;
+                    }
+                }
+            }
+        }
+        return finished;
     }
 
     private void setButtonLayout(int row, int column) {

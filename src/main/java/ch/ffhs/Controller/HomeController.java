@@ -96,6 +96,7 @@ public class HomeController {
             VBox vbox = loader.load();
             this.vbox_home.getChildren().addAll(vbox.getChildren());
             boardController = loader.getController();
+            boardController.setHomeController(this);
             boardController.startGame(level);
             if (isInitialLoad) {
                 counterService.setTimer(boardController.getTimer());
